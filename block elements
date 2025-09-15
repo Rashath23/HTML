@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Common Tags Demo (No Section)</title>
+  <style>
+  </style>
+</head>
+<body>
+  <header>
+    <h1> INDIAN TIMES NOW</h1>
+    <p>This is the number one page in india.</p>
+  </header>
+<hr>
+  <nav>
+     <a href="Home.html">Home</a> | <a href="About.html">About</a> | <a href="contact.html">Contact</a></p>
+  </nav>
+<hr>
+  <p>
+  Welcome India,<br>
+  We are supplying in Pan India.<br>
+    We are the best in the world.
+  </p>
+
+  <br>  
+    <article>
+      <img src="IMAGES/Weather.jpeg" alt="weather">
+        <p>today's weather report in chennai...click here</p>
+    </article>
+    <section>
+      <h1>Politics</h1>
+      <img src="IMAGES/POLITICS.jpeg" alt="Politics">
+        <p>Latest political news...click here</p>
+      <p>Contents of Politics</p>
+    </section>
+    <section>
+        <h2>Latest News in Tamil Nadu</h2>
+        <article>
+            <h3>Chennai hits Cyclone after 5 years</h3>
+            <p>Chennai,chengalpattu,kanchipuram these areas are recorded 25cm rainfall and those peoples are suffering and affected</p>
+        </article>
+        <article>
+            <h3>TN Legend Ravichandar Ashwin Retired From Internationals.</h3>
+            <p>Indian Allrounder Ravichandar Ashwin Retires from Internationals and he is massive record in test matches. And he announced Retires in australia</p>
+        </article>
+    </section>
+    
+  
+    <aside>
+        <h3> Central News</h3>
+        <ul>PAN India News Covered in 24 Hours.</ul>
+        <li>PM Modi Started World Tour</li>
+        <li>Finance Minister announced GST </li>
+        <li>India Won T20 World Cup</li>
+        </ul>
+      <aside>
+    <div>
+      <h2> Today Proverb </h2>
+      <p>Mr.Rahul Writes an Proverb for current Genz Boys and Girls and he dedicates to these Genz Peoples</p>
+
+      <pre>
+            “Mental health is just as important as physical health;
+             let’s break the stigma.”
+      </pre>
+    </div>
+    <div>
+      <h2> Today's Picture </h2>
+      <figure>
+        <img src="IMAGES/enjoyment.jpeg" alt="Sample">
+        <figcaption>Fig.1 - Enjoying Life.</figcaption>
+      </figure>
+    </div>
+    <div>
+      <h2> Office Address</h2>
+      <address>
+        INDIAN TIMES NOW<br>
+        Visit us at: indiantimes.com<br>
+        shivaji nagar, Mumbai, Maharashtra - 400001<br>
+        <a href="tel:+911234567890">+91 12345 67890</a><br>
+      </address>
+    </div>
+  <footer>
+    <p>&copy; 2025 Indian Times Now - The PAN Indian Newspaper</p>
+  </footer>
+
+</body>
+</html>
