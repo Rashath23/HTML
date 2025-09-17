@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taj Royal Dining</title>
+</head>
+<body>
+<header>
+    <h1 style="text-align:center">🍽️ TAJ ROYAL DINING</h1> 
+</header>
+
+<nav style="text-align: center;">
+    <a href="#Menu">MENU</a>&nbsp;&nbsp;
+    <a href="home.html">HOME</a>&nbsp;&nbsp;
+    <a href="about.html">ABOUT</a>&nbsp;&nbsp;
+    <a href="contact.html">CONTACT</a>&nbsp;&nbsp;
+    <a href="reservation.html">RESERVATION</a>
+</nav>      
+<br>
+
+<!-- Reservation Form -->
+<form>
+  <div style="display: flex; justify-content: center;">
+    <aside style="width: 65%; background-color: rgb(247, 214, 150); line-height:2; border: 2px solid #333; border-radius: 8px; padding: 16px; box-sizing: border-box; margin: 0 auto; display: block;">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name"><br><br>
+
+      <label>Booking For:</label>
+      <input type="radio" id="dinein" name="booking" value="dinein">
+      <label for="dinein">Dine-In</label>
+      <input type="radio" id="takeaway" name="booking" value="takeaway">
+      <label for="takeaway">Takeaway</label><br><br>
+
+      <label for="table">Select Table Size:</label>
+      <select id="table" name="table">
+        <option value="2">2 Persons</option>
+        <option value="4">4 Persons</option>
+        <option value="6">6 Persons</option>
+      </select><br><br>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email"><br><br>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone"><br><br>
+
+      <input type="submit" value="Reserve Table">
+    </aside>
+  </div>
+</form>
+  
+<!-- About Section -->
+<p>
+  <b>
+    Welcome to Taj Royal Dining – the finest family restaurant in Chennai, 
+    serving authentic Indian, Continental, and Chinese cuisines. 
+    We bring you a perfect blend of taste, tradition, and elegance.
+  </b>
+</p>
+<p>
+  <i>
+    Our chefs prepare every dish with passion, using fresh ingredients and 
+    authentic spices. Whether it’s a casual dinner, family celebration, 
+    or corporate event, we make every occasion memorable.
+  </i>
+</p>
+
+<p>
+  <em>
+    <b>Contact:</b> 9876543210<br>
+    <b>Branches:</b> Chennai, Bangalore, Mumbai, Hyderabad, Pune
+  </em>
+</p>
+
+<p>
+  <strong>    
+    ✅ Multi-Cuisine Menu<br>
+    ✅ Fine Dining Ambience<br>
+    ✅ Home Delivery Available<br>
+    ✅ Party & Event Bookings
+  </strong>
+</p>
+
+<p>
+  <u>
+    <b>Reserve your table today and enjoy a royal dining experience with us! 🍷🍛</b>
+  </u>
+</p>
+
+<!-- Special Offers -->
+<div style="display: flex; justify-content: center;">
+  <aside style="width: 33%; background-color: rgb(3, 217, 255); line-height:2; border: 2px solid #333; border-radius: 8px; padding: 16px; box-sizing: border-box;">
+      <h2 style="text-align: center;">
+          Special <mark>Offers</mark> – Limited Time Only!
+      </h2>
+
+      <p>
+          ✅ Royal Thali 
+          <del>Rs.799</del>
+          499.
+      </p>
+
+      <p>
+          ✅ BBQ Combo 
+          <del>Rs.1299</del>
+          899.
+      </p>
+ 
+      <p>
+          ✅ Family Dinner Pack 
+          <del>Rs.2500</del>
+          <ins>1800.</ins>
+      </p>
+
+      <p>
+          ✅ Weekend Buffet 
+          <del>Rs.999</del>
+          699.
+      </p>
+  </aside>
+</div>
+
+<!-- Menu Section -->
+<p id="Menu">
+  Our restaurant offers a wide variety of delicacies – from sizzling tandoors 
+  and biryanis to continental pastas and Chinese stir-fries. 
+</p>
+<p>
+  ✅ Starters: Soups, Kebabs, Spring Rolls<br>
+  ✅ Main Course: Biryanis, Curries, Pastas<br>
+  ✅ Desserts: Ice Cream, Gulab Jamun, Pastries<br>
+  ✅ Drinks: Mocktails, Shakes, Fresh Juices
+</p>
+<p>
+  Join us today and savor the flavors of royalty at Taj Royal Dining! 🥂
+</p>
+
+</body>
+</html>
