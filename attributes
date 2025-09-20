@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EXPLORE INDIA TOURS - HOME</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+    }
+    nav {
+      background: #444;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 20px;
+    }
+    .news-card {
+      border: 2px solid #1a237e;
+      margin: 20px 0;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      background: #fff;
+      transition: box-shadow 0.3s;
+    }
+    .news-card:hover {
+      box-shadow: 0 8px 24px rgba(26,35,126,0.15);
+    }
+    .news-card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+  </style>
+<header>
+  <body style="background-color: rgb(230, 255, 245)"></body>
+  <div style="display: flex; align-items: center; justify-content: center; gap: 20px;">
+    <img src="IMAGES/travel_logo.jpeg" alt="Site Logo" style="height:60px;">
+    <div>
+      <h1 style="margin: 0;">EXPLORE INDIA TOURS</h1>
+      <p style="margin: 0;">Your Gateway to Incredible Journeys</p>
+    </div>
+  </div>
+</header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="destinations.html">Destinations</a>
+    <a href="adventures.html">Adventures</a>
+    <a href="culture.html">Culture</a>
+    <a href="about.html" target="_blank">About Us</a>
+  </nav>
+
+  <!-- Travel Sections -->
+  <section id="home">
+    <h2>Top Destinations</h2>
+    <div class="news-card">
+      <img src="IMAGES/tajmahal.jpeg" alt="Travel image" width="500" height="250">
+      <h3>Experience the Majesty of Taj Mahal</h3>
+      <p>Visit the symbol of love and one of the Seven Wonders of the World with our special Agra package...</p>
+      <a href="https://www.incredibleindia.org/" target="_blank">Explore More</a>
+    </div>
+  </section>
+
+  <section id="destinations">
+    <h2>Adventure Trips</h2>
+    <div class="news-card">
+      <img src="IMAGES/himalayas.jpeg" alt="Adventure image" width="500" height="250">
+      <h3>Trekking in the Himalayas</h3>
+      <p>Join our guided treks and experience the thrill of conquering the highest peaks with professional experts...</p>
+      <a href="https://www.incredibleindia.org/">Explore More</a>
+    </div>
+  </section>
+
+  <section id="adventures">
+    <h2>Beach Holidays</h2>
+    <div class="news-card">
+      <img src="IMAGES/goa_beach.jpeg" alt="Beach image" width="500" height="250">
+      <h3>Relax in Goa</h3
