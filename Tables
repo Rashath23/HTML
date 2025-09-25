@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BLOCKBUSTER MOVIES</title>
+    <style>
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #19398A;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        caption {
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            background-color: #19398A;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 2px;
+            margin-top: auto;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #19398A;
+            color: #ffd000;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<header style="background-color: #19398A; padding: 20px 0; text-align: center; border-radius: 2px;">
+    <img src="IMAGES/movie_logo.jpeg" alt="Movie Logo" style="height: 80px; vertical-align: middle;">
+    <h1 style="display: inline-block; color: #ffffff; margin-left: 20px; vertical-align: middle;">BLOCKBUSTER MOVIES</h1>
+</header>
+
+<h2 style="text-align: center;">ABOUT THE MOVIE INDUSTRY</h2>
+<div style="max-width: 900px; margin: 0 auto; padding: 20px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 8px rgba(1, 1, 1, 1.1);">
+    <div style="text-align: center;">
+        <img src="IMAGES/movie1.jpeg" alt="Movie Poster" style="max-width: 100%; height: auto; border-radius: 8px;">
+        <p>
+            Movies have been a powerful form of entertainment for more than a century. 
+            From the golden era of Hollywood to today’s digital blockbusters, films 
+            have shaped culture, inspired generations, and entertained billions worldwide. 
+            The movie industry has produced legendary stars, unforgettable characters, 
+            and iconic stories. Today, streaming platforms and global cinema releases 
+            bring movies closer to audiences like never before.
+        </p>
+    </div>
+</div>
+
+<br>
+
+<div style="max-width: 1300px; margin: 0 auto; padding: 20px; background-color: #ffffff; border-radius: 25px; box-shadow: 0 2px 8px rgba(1, 1, 1, 1.1);">
+    <table>
+        <caption>Top 5 Movies (2025 Box Office)</caption>
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Movie</th>
+                <th>Release Year</th>
+                <th>Worldwide Collection</th>
+                <th>IMDB Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background-color: #0883ca;">
+                <td>1</td>
+                <td>Avengers: Endgame</td>
+                <td>2019</td>
+                <td>$2.79B</td>
+                <td>8.4</td>
+            </tr>
+            <tr style="background-color: #f5f504cc;">
+                <td>2</td>
+                <td>Avatar</td>
+                <td>2009</td>
+                <td>$2.92B</td>
+                <td>7.9</td>
+            </tr>
+            <tr style="background-color: #c300ff;">
+                <td>3</td>
+                <td>Titanic</td>
+                <td>1997</td>
+                <td>$2.26B</td>
+                <td>7.8</td>
+            </tr>
+            <tr style="background-color: #ff0000;">
+                <td>4</td>
+                <td>The Lion King</td>
+                <td>2019</td>
+                <td>$1.65B</td>
+                <td>6.8</td>
+            </tr>
+            <tr style="background-color: #ff9d00;">
+                <td>5</td>
+                <td>Frozen II</td>
+                <td>2019</td>
+                <td>$1.45B</td>
+                <td>6.9</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<br>
+
+<div style="max-width: 1300px; margin: 0 auto; padding: 20px; background-color: #ffffff; border-radius: 25px; box-shadow: 0 2px 8px rgba(1, 1, 1, 1.1);">
+    <table style="border-collapse: separate; border-spacing: 0; width: 100%;">
+        <caption>Top Actors (2025 Stats)</caption>
+        <thead>
+            <tr>
+                <th style="border-radius: 12px 0 0 12px;">S.No</th>
+                <th>Actor</th>
+                <th>Famous Movie</th>
+                <th>Box Office Earnings</th>
+                <th>Awards Won</th>
+                <th style="border-radius: 0 12px 12px 0;">IMDB Popularity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background-color: #0883ca;">
+                <td>1</td>
+                <td>Leonardo DiCaprio</td>
+                <td>Titanic</td>
+                <td>$7.2B</td>
+                <td>3 Oscars</td>
+                <td>9.1</td>
+            </tr>
+            <tr style="background-color: #f5f504cc;">
+                <td>2</td>
+                <td>Robert Downey Jr.</td>
+                <td>Avengers: Endgame</td>
+                <td>$14B</td>
+                <td>2 Oscars</td>
+                <td>9.5</td>
+            </tr>
+            <tr style="background-color: #ff9d00;">
+                <td>3</td>
+                <td>Scarlett Johansson</td>
+                <td>Black Widow</td>
+                <td>$11.5B</td>
+                <td>1 BAFTA</td>
+                <td>9.0</td>
+            </tr>
+            <tr style="background-color: #c300ff;">
+                <td>4</td>
+                <td>Dwayne Johnson</td>
+                <td>Jumanji</td>
+                <td>$10B</td>
+                <td>Multiple MTV Awards</td>
+                <td>8.8</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<br>
+
+<footer>
+    &copy; 2025 BLOCKBUSTER MOVIES. All rights reserved.
+</footer>
+</body>
+</html>
