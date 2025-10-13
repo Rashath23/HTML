@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Button and Text Example</title>
+  <style>
+    body {
+      background-color: orange; /* Sets the background color to orange */
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      color: white;
+      text-align: center;
+    }
+    p {
+      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white for readability */
+      padding: 15px;
+      margin: 10px auto;
+      border-radius: 8px;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 1.1em;
+      cursor: pointer;
+      background-color: #4CAF50; /* Green button */
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>JavaScript Demo</h1>
+
+  <!-- A paragraph to display text -->
+  <p id="message">Click the button to see a message!</p>
+
+  <!-- A button that runs a JS function -->
+    <button onclick="alert('Inline JS Called!')">InlineJS</button>
+    <script>
+            alert("Welcome to JavaScript!");
+    </script>
+    <button onclick="showMessage()">Click Here</button>
+        <script src="basic.js"></script>
+  <p>This is some additional content to make the page longer. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Another paragraph to extend the page. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  <script src="basic.js"></script>
+</body>
+</html>
