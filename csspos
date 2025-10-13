@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Display & Position Tasks</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #000000;
+      min-height: 2000px; /* Ensure page is scrollable for fixed/sticky demo */
+    }
+
+    h1, h2, h3 {
+      text-align: center;
+      color: #a600ff;
+      margin-top: 40px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+    }
+
+    section {
+      margin: 20px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      max-width: 800px;
+    }
+
+    .box {
+      background-color: #3498db;
+      color: white;
+      padding: 10px;
+      margin: 5px;
+      border: 1px solid #2980b9;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    /* Task 1 — Display Basics */
+    .display-block-container .box {
+      /* display: block is default for div, but explicitly set for clarity */
+      display: block; 
+      background-color: #2ecc71;
+    }
+    .display-inline-container .box {
+      display: inline; /* Items flow like text, width/height ignored */
+      background-color: #e74c3c;
+    }
+    .display-inline-block-container .box {
+      display: inline-block; /* Items flow like text, but respect width/height */
+      width: 100px;
+      height: 50px;
+      line-height: 50px; /* Center text vertically */
+      background-color: #f39c12;
+    }
+
+    /* Task 2 — Hidden Element */
+    .hidden-paragraph {
+      display: none; /* Element is completely removed from the document flow */
+      background-color: #9b59b6;
+      color: white;
+      padding: 10px;
+      margin-top: 20px;
+    }
+
+    /* Task 3 — Position Basics */
+    .position-container {
+      position: relative; /* Crucial for absolute children to position relative to this container */
+      height: 250px;
+      border: 2px dashed #ffa200;
+      background-color: #ecf0f1;
+      margin-top: 30px;
+      padding: 10px;
+    }
+    .static-box {
+      position: static; /* Default position, element flows normally */
+      background-color: #1abc9c;
+      width: 100px;
+      height: 50px;
+    }
+    .relative-box {
+      position: relative; /* Positioned relative to its normal position */
+      top: 20px;
+      left: 20px;
+      background-color: #8e44ad;
+      width: 100px;
+      height: 50px;
+    }
+    .absolute-box {
+      position: absolute; /* Positioned relative to its nearest positioned ancestor */
+      bottom: 10px;
+      right: 10px;
+      background-color: #d35400;
+      width: 100px;
+      height: 50px;
+    }
+
+    /* Task 4 — Fixed & Sticky */
+    .fixed-box {
+      position: fixed; /* Positioned relative to the viewport, stays put on scroll */
+      top: 20px;
+      right: 20px;
+      background-color: #c0392b;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      z-index: 1000; /* Ensure it stays on top */
+    }
+    .sticky-header {
+      position: sticky; /* Sticks to the top when scrolled past its normal position */
+      top: 0;
+      background-color: #ff9500;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      z-index: 999; /* Below fixed box */
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    /* Task 5 — Mini Project: Menu Toggle */
+    .menu-button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 1.1em;
+      cursor: pointer;
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    .menu {
+      list-style: none;
+      padding: 10px;
+      margin: 0 auto;
+      background-color: #ecf0f1;
+      border: 1px solid #bdc3c7;
+      border-radius: 5px;
+      max-width: 300px;
+      text-align: left;
+      /* Initially hidden */
+      display: none; 
+    }
+    .menu li {
+      padding: 8px 0;
+      border-bottom: 1px dashed #ccc;
+    }
+    .menu li:last-child {
+      border-bottom: none;
+    }
+    .menu a {
+      text-decoration: none;
+      color: #34495e;
+      display: block;
+    }
+    .menu a:hover {
+      color: #2980b9;
+      font-weight: bold;
+    }
+
+  </style>
+</head>
+<body>
+<button class="fixed-box" onclick="location.href='about.html'">click here</button>
+  <header class="sticky-header">
+    <h1>Website Header</h1>
+  </header>
+
+  <h1>CSS Display & Position Properties</h1>
+
+  <section>
+    <h2>Task 1 — Display Basics</h2>
+
+    <h3>`display: block`</h3>
+    <p>Block-level elements take up the full width available and start on a new line.</p>
+    <div class="display-block-container">
+      <div class="box">Block 1</div>
+      <div class="box">Block 2</div>
+      <div class="box">Block 3</div>
+    </div>
+
+    <h3>`display: inline`</h3>
+    <p>Inline elements only take up as much width as necessary and do not start on a new line. Width and height properties are ignored.</p>
+    <div class="display-inline-container">
+      <div class="box">Inline 1</div>
+      <div class="box">Inline 2</div>
+      <div class="box">Inline 3</div>
+    </div>
+
+    <h3>`display: inline-block`</h3>
+    <p>Inline-block elements flow like inline elements but respect width and height properties.</p>
+    <div class="display-inline-block-container">
+      <div class="box">Inline-Block 1</div>
+      <div class="box">Inline-Block 2</div>
+      <div class="box">Inline-Block 3</div>
+    </div>
+  </section>
+
+  <section>
+ <h2>Hidden Element Task</h2>
+  <p>This paragraph is visible to everyone.</p>
+  <p class="hidden-text">You can’t see this text because display is set to none.</p>
+  </section>
+
+  <section>
+    <h2>Task 3 — Position Basics</h2>
+    <p>Demonstrates `static`, `relative`, and `absolute` positioning within a `relative` container.</p>
+    <div class="position-container">
+      <div class="box static-box">Static</div>
+      <div class="box relative-box">Relative (shifted)</div>
+      <div class="box absolute-box">Absolute (bottom-right)</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Task 4 — Fixed & Sticky (Scroll to see effect)</h2>
+    <p>The "Fixed Box" in the top-right corner stays in place as you scroll.</p>
+    <p>The "Sticky Header" above this section will stick to the top of the viewport once you scroll past it.</p>
+    <p>Scroll down to observe the behavior of the fixed and sticky elements. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>More content to ensure scrolling. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Even more content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </section>
+
+  <section>
+    <h2>Task 5 — Mini Project: Menu Toggle</h2>
+    <button class="menu-button" onclick="toggleMenu()">Toggle Menu</button>
+    <ul id="myMenu" class="menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </section>
+
+  <script>
+    // JavaScript for Task 5
+    function toggleMenu() {
+      const menu = document.getElementById('myMenu');
+      if (menu.style.display === 'none' || menu.style.display === '') {
+        menu.style.display = 'block';
+      } else {
+        menu.style.display = 'none';
+      }
+    }
+  </script>
+
+</body>
+</html>
