@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Operators and Switch Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    .result {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>JavaScript Operators and Switch Example</h1>
+  <div class="result" id="output"></div>
+
+  <script>
+    let a = 10;
+    let b = 3;
+    let number = -5;
+    let dayNumber = 3;
+
+    // Arithmetic Operations
+    let addition = a + b;
+    let subtraction = a - b;
+    let multiplication = a * b;
+    let division = a / b;
+    let remainder = a % b;
+
+    // Comparison Operators
+    let equalCheck = (a == b);     // Loose equality
+    let strictEqualCheck = (a === b); // Strict equality
+
+    // Logical Operators
+    let andCheck = (a > 5 && b < 5);
+    let orCheck = (a < 5 || b < 5);
+
+    // Check if number is positive or negative
+    let signCheck = (number >= 0) ? "Positive" : "Negative";
+
+    // Switch for days of the week
+    let day;
+    switch(dayNumber) {
+      case 1: day = "Monday"; break;
+      case 2: day = "Tuesday"; break;
+      case 3: day = "Wednesday"; break;
+      case 4: day = "Thursday"; break;
+      case 5: day = "Friday"; break;
+      case 6: day = "Saturday"; break;
+      case 7: day = "Sunday"; break;
+      default: day = "Invalid Day";
+    }
+
+    // Display all results
+    document.getElementById("output").innerHTML = `
+      <strong>Arithmetic Operations:</strong><br>
+      a + b = ${addition}<br>
+      a - b = ${subtraction}<br>
+      a * b = ${multiplication}<br>
+      a / b = ${division.toFixed(2)}<br>
+      a % b = ${remainder}<br><br>
+
+      <strong>Comparison:</strong><br>
+      a == b → ${equalCheck}<br>
+      a === b → ${strictEqualCheck}<br><br>
+
+      <strong>Logical:</strong><br>
+      (a > 5 && b < 5) → ${andCheck}<br>
+      (a < 5 || b < 5) → ${orCheck}<br><br>
+
+      <strong>Number Check:</strong><br>
+      ${number} is ${signCheck}<br><br>
+
+      <strong>Day of the Week:</strong><br>
+      Day ${dayNumber} → ${day}
+    `;
+  </script>
+</body>
+</html>
