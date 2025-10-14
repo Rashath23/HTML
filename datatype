@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Variables and Operators Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
+      padding: 20px;
+    }
+    h1 {
+      color: #0066cc;
+    }
+    pre {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>JavaScript Variables and Operators</h1>
+  <p>Open the console (Press <b>F12</b> → Console tab) to see the output.</p>
+
+  <pre id="output"></pre>
+
+  <script>
+    // Variable Declarations
+    var name = "Sham";         // string
+    let age = 23;              // number
+    const isStudent = true;    // boolean
+    let salary = null;         // null
+    let city;                  // undefined
+
+    // Display variable values
+    let result = "";
+    result += "Name: " + name + "\n";
+    result += "Age: " + age + "\n";
+    result += "Is Student: " + isStudent + "\n";
+    result += "Salary: " + salary + "\n";
+    result += "City: " + city + "\n\n";
+
+    // Arithmetic Operations
+    let x = 10;
+    let y = 3;
+    result += "Addition (x + y): " + (x + y) + "\n";
+    result += "Subtraction (x - y): " + (x - y) + "\n";
+    result += "Multiplication (x * y): " + (x * y) + "\n";
+    result += "Division (x / y): " + (x / y).toFixed(2) + "\n";
+    result += "Modulus (x % y): " + (x % y) + "\n\n";
+
+    // Comparison Operators
+    result += "x == y: " + (x == y) + "\n";
+    result += "x === y: " + (x === y) + "\n";
+    result += "10 == '10': " + (10 == '10') + "\n";
+    result += "10 === '10': " + (10 === '10') + "\n\n";
+
+    // Logical Operators
+    let a = true;
+    let b = false;
+    result += "a && b: " + (a && b) + "\n";
+    result += "a || b: " + (a || b) + "\n";
+
+    // Output on page
+    document.getElementById("output").innerText = result;
+
+    // Also log in console
+    console.log(result);
+  </script>
+</body>
+</html>
