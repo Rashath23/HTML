@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Array Methods Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    .result {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      margin-top: 20px;
+      white-space: pre-wrap;
+      min-height: 100px;
+    }
+    .button-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    button {
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+    <h1>JavaScript Array Methods Examples</h1>
+    <div class="button-container">
+        <button onclick="displayInitialArray()">1. Display Initial Array</button>
+        <button onclick="addWithPush()">2. Add 'Date' (push)</button>
+        <button onclick="removeWithPop()">3. Remove Last (pop)</button>
+        <button onclick="addWithUnshift()">4. Add 'Elderberry' (unshift)</button>
+        <button onclick="removeWithShift()">5. Remove First (shift)</button>
+        <button onclick="iterateWithForLoop()">6. Print All Elements (for loop)</button>
+    </div>
+    <div id="output" class="result"></div>
+    
+    <script>
+        // Global constant for initial fruits
+        const initialFruits = ['Apple', 'Banana', 'Cherry'];
+
+        const outputDiv = document.getElementById('output');
+
+        // Helper function to clear output and append new content
+        function clearAndAppend(title, content) {
+            outputDiv.innerHTML = '';
+            outputDiv.innerHTML += `<h2>${title}</h2>`;
+            outputDiv.innerHTML += `<p>${content}</p>`;
+        }
+
+        // 1. Display initial array
+        function displayInitialArray() {
+            clearAndAppend('1. Display Initial Array', `Initial Fruits: ${initialFruits.join(', ')}`);
+        }
+
+        // 2. Add element using push()
+        function addWithPush() {
+            const fruits = [...initialFruits];
+            fruits.push('Date');
+            clearAndAppend('2. Add Element (push)', `Original: ${initialFruits.join(', ')}\nAfter push: ${fruits.join(', ')}`);
+        }
+
+        // 3. Remove last element using pop()
+        function removeWithPop() {
+            const fruits = [...initialFruits];
+            const last = fruits.pop();
+            clearAndAppend('3. Remove Last Element (pop)', `Original: ${initialFruits.join(', ')}\nRemoved: ${last}\nAfter pop: ${fruits.join(', ')}`);
+        }
+
+        // 4. Add to beginning using unshift()
+        function addWithUnshift() {
+            const fruits = [...initialFruits];
+            fruits.unshift('Elderberry');
+            clearAndAppend('4. Add to Beginning (unshift)', `Original: ${initialFruits.join(', ')}\nAfter unshift: ${fruits.join(', ')}`);
+        }
+
+        // 5. Remove first element using shift()
+        function removeWithShift() {
+            const fruits = [...initialFruits];
+            const first = fruits.shift();
+            clearAndAppend('5. Remove First Element (shift)', `Original: ${initialFruits.join(', ')}\nRemoved: ${first}\nAfter shift: ${fruits.join(', ')}`);
+        }
+
+        // 6. Print all elements using for loop
+        function iterateWithForLoop() {
+            let fruits = [...initialFruits];
+            let result = "All elements using for loop:\n";
+            for (let i = 0; i < fruits.length; i++) {
+                result += `${i + 1}. ${fruits[i]}\n`;
+            }
+            clearAndAppend('6. Print All Elements Using For Loop', result);
+        }
+    </script>
+</body>
+</html>
