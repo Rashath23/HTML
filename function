@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Functions and Scope</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    .result {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      margin-top: 10px;
+      white-space: pre-wrap; /* To preserve newlines in output */
+    }
+  </style>
+</head>
+<body>
+  <h1>JavaScript Functions and Scope Examples</h1>
+  <div id="output" class="result"></div>
+
+  <script>
+    const outputDiv = document.getElementById('output');
+    let outputContent = '';
+
+    function appendToOutput(title, content) {
+      outputContent += `<h2>${title}</h2>`;
+      outputContent += `<p>${content}</p>`;
+    }
+
+    // 1. Function to add two numbers
+    function add(a, b) {
+      return a + b;
+    }
+    const sum = add(5, 3);
+    appendToOutput('1. Function to Add Two Numbers', `add(5, 3) = ${sum}`);
+
+    // 2. Function expression to multiply two numbers
+    const multiply = function(a, b) {
+      return a * b;
+    };
+    const product = multiply(4, 6);
+    appendToOutput('2. Function Expression to Multiply Two Numbers', `multiply(4, 6) = ${product}`);
+
+    // 3. Arrow function to subtract two numbers
+    const subtract = (a, b) => a - b;
+    const difference = subtract(10, 4);
+    appendToOutput('3. Arrow Function to Subtract Two Numbers', `subtract(10, 4) = ${difference}`);
+
+    // 4. Function with parameters and return a value (demonstrated by add, multiply, subtract, but here's another for clarity)
+    function calculateArea(length, width) {
+      return length * width;
+    }
+    const area = calculateArea(7, 5);
+    appendToOutput('4. Function with Parameters and Return Value (Calculate Area)', `calculateArea(7, 5) = ${area}`);
+
+    // 5. Demonstrate global vs local scope
+    let globalVar = "I am a global variable."; // Global scope
+
+    function showScope() {
+      let localVar = "I am a local variable."; // Local scope
+      let scopeOutput = `Inside function:
+      Global variable: "${globalVar}"
+      Local variable: "${localVar}"`;
+      appendToOutput('5. Global vs Local Scope', scopeOutput);
+      console.log("Inside showScope(): globalVar =", globalVar);
+      console.log("Inside showScope(): localVar =", localVar);
+    }
+
+    showScope(); // Call the function to demonstrate local scope
+
+    // Trying to access localVar outside its function will result in an error
+    try {
+      // This line would cause an error if uncommented:
+      // console.log("Outside function: localVar =", localVar);
+      appendToOutput('', `Outside function: Attempting to access 'localVar' would result in an error (ReferenceError).
+      Global variable: "${globalVar}"`);
+      console.log("Outside showScope(): globalVar =", globalVar);
+    } catch (e) {
+      appendToOutput('', `Outside function: Error accessing 'localVar': ${e.message}`);
+    }
+
+    // Update the div with all accumulated content
+    outputDiv.innerHTML = outputContent;
+  </script>
+</body>
+</html>
