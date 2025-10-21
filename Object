@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Object Creation and Manipulation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    .output-box {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      margin-top: 20px;
+      white-space: pre-wrap; /* Preserves newlines and spaces */
+      font-family: 'Consolas', 'Courier New', monospace;
+      color: #333;
+      border: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <h1>JavaScript Object Examples</h1>
+  <div id="output" class="output-box"></div>
+
+  <script>
+    const outputDiv = document.getElementById('output');
+    let outputContent = '';
+
+    function appendToOutput(text) {
+      outputContent += text + '\n';
+    }
+
+    // 1. Create an object with name, age, and method sayHello()
+    const person = {
+      name: "Alice",
+      age: 30,
+      sayHello: function() {
+        return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+      }
+    };
+
+    appendToOutput("--- Initial Object ---");
+    appendToOutput(`Object: ${JSON.stringify(person, null, 2)}`); // Pretty print object
+    appendToOutput(`Name: ${person.name}`);
+    appendToOutput(`Age: ${person.age}`);
+    appendToOutput(`Method call: ${person.sayHello()}`);
+
+    // 2. Access and modify object properties
+    appendToOutput("\n--- Modifying Object Properties ---");
+    person.age = 31; // Modify age
+    person.occupation = "Software Engineer"; // Add a new property
+
+    appendToOutput(`Modified Age: ${person.age}`);
+    appendToOutput(`New Property (Occupation): ${person.occupation}`);
+    appendToOutput(`Object after modification: ${JSON.stringify(person, null, 2)}`);
+
+    // 3. Call an object method (after modification)
+    appendToOutput("\n--- Calling Method After Modification ---");
+    appendToOutput(`Method call (after age change): ${person.sayHello()}`);
+
+    // Display all accumulated content
+    outputDiv.textContent = outputContent;
+  </script>
+</body>
+</html>
