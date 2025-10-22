@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f5f5f5;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #333;
+      padding: 10px 20px;
+      color: #fff;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li {
+      margin-left: 20px;
+      position: relative;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Dropdown */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 30px;
+      left: 0;
+      background-color: white;
+      min-width: 120px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      list-style: none;
+      padding: 0;
+      z-index: 1;
+    }
+
+    .dropdown-content li a {
+      color: black;
+      display: block;
+      padding: 8px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Main content */
+    .content {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .data-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      width: 200px;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      background: #333;
+      color: white;
+      padding: 10px;
+      margin-top: 20px;
+    }
+
+    /* Hide sections by default */
+    section {
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    form input, form button {
+      padding: 8px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <h2>My Website</h2>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#" onclick="showPage('home')">Home</a></li>
+        <li class="dropdown">
+          <a href="#">Menu ▼</a>
+          <ul class="dropdown-content">
+            <li><a href="#" onclick="showPage('about')">About</a></li>
+            <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Home Page -->
+  <section id="home" class="content active">
+    <h1>Welcome to Home Page</h1>
+    <p>Below are items displayed using JavaScript Array Methods:</p>
+    <div id="data-list" class="data-container"></div>
+  </section>
+
+  <!-- About Page -->
+  <section id="about" class="content">
+    <h1>About Us</h1>
+    <p>We are a demo website built using Flexbox and JavaScript.</p>
+  </section>
+
+  <!-- Contact Page -->
+  <section id="contact" class="content">
+    <h1>Contact Us</h1>
+    <form>
+      <label>Name:</label><br>
+      <input type="text" placeholder="Enter your name"><br><br>
+      <label>Email:</label><br>
+      <input type="email" placeholder="Enter your email"><br><br>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 My Flex Website</p>
+  </footer>
+
+  <script>
+    // ---------- PAGE NAVIGATION ----------
+    function showPage(pageId) {
+      document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+      document.getElementById(pageId).classList.add("active");
+    }
+
+    // ---------- ARRAY METHODS ----------
+    let products = ["Laptop", "Phone", "Tablet", "Camera"];
+
+    // Use array methods
+    products.push("Smart Watch");  // add end
+    products.unshift("Headphones"); // add start
+    products.pop(); // remove end
+    products.shift(); // remove start
+    let found = products.find(p => p === "Phone");
+    let index = products.indexOf("Tablet");
+
+    // Display data
+    let container = document.getElementById("data-list");
+
+    products.forEach(item => {
+      let card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `<h3>${item}</h3>`;
+      container.appendChild(card);
+    });
+
+    // Show found and index info
+    let info = document.createElement("p");
+    info.innerHTML = `Found item: <b>${found}</b> (Index of Tablet: ${index})`;
+    container.appendChild(info);
+  </script>
+</body>
+</html>
