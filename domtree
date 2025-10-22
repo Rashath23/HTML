@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM Manipulation</title>
+    <style>
+        /* Basic styling for the elements */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        #main-heading {
+            color: #333;
+        }
+        #my-paragraph {
+            color: #555;
+        }
+        #styled-box {
+            background-color: #f0f0f0;
+            border: 2px solid #ccc;
+            padding: 10px;
+            margin-top: 15px;
+            width: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Original Heading Text</h1>
+    <h2 id="main-heading">This heading's text will be changed.</h2>
+
+    <p id="my-paragraph">This is the original paragraph content that will be updated.</p>
+
+    <div id="styled-box">Style Me!</div>
+
+    <script>
+        // Wait for the DOM to be fully loaded before running the script
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // 1. Change text of an element using getElementById
+            const headingElement = document.getElementById('main-heading');
+            headingElement.textContent = 'New Heading Text!';
+
+            // 2. Select an element and change its style
+            const boxElement = document.getElementById('styled-box');
+            boxElement.style.backgroundColor = 'lightblue';
+            boxElement.style.border = '2px solid navy';
+            boxElement.style.fontWeight = 'bold'; // Added one more style
+
+            // 3. Change content of a paragraph
+            const paragraphElement = document.getElementById('my-paragraph');
+            paragraphElement.innerHTML = 'The paragraph content has been <strong>updated</strong>!';
+
+            // 4. Change color and font size of text (using the same paragraph)
+            paragraphElement.style.color = 'darkgreen';
+            paragraphElement.style.fontSize = '18px';
+
+        });
+    </script>
+
+</body>
+</html>
