@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movie Feedback Form</title>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      padding: 20px; 
+      background-color: #f5f5f5;
+    }
+    h2 {
+      color: #333;
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, button {
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    #likeOutput, #nameOutput, #formMessage {
+      margin-top: 10px;
+      color: #007a1f;
+      font-weight: bold;
+    }
+    form {
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🎬 Movie Feedback Form</h2>
+
+  <!-- Click Event -->
+  <button id="likeBtn">👍 Like This Movie</button>
+  <p id="likeOutput"></p>
+
+  <!-- Input Event -->
+  <label for="viewerName">Your Name:</label>
+  <input type="text" id="viewerName" placeholder="Enter your name">
+  <p id="nameOutput"></p>
+
+  <!-- Submit Event -->
+  <form id="feedbackForm">
+    <label for="feedbackEmail">Your Email:</label>
+    <input type="email" id="feedbackEmail" placeholder="Enter your email" required>
+
+    <label for="comments">Your Feedback:</label>
+    <input type="text" id="comments" placeholder="Share your thoughts" required>
+
+    <button type="submit">Submit Feedback</button>
+  </form>
+  <p id="formMessage"></p>
+
+  <script>
+    // -------------------------------
+    // CLICK EVENT
+    // -------------------------------
+    const likeBtn = document.getElementById("likeBtn");
+    const likeOutput = document.getElementById("likeOutput");
+
+    likeBtn.addEventListener("click", () => {
+      likeOutput.textContent = "You liked this movie! 🍿";
+    });
+
+    // -------------------------------
+    // INPUT EVENT
+    // -------------------------------
+    const viewerName = document.getElementById("viewerName");
+    const nameOutput = document.getElementById("nameOutput");
+
+    viewerName.addEventListener("input", function () {
+      nameOutput.textContent = "Welcome, " + this.value + "! 🎥";
+    });
+
+    // -------------------------------
+    // SUBMIT EVENT
+    // -------------------------------
+    const feedbackForm = document.getElementById("feedbackForm");
+    const formMessage = document.getElementById("formMessage");
+
+    feedbackForm.addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent page reload
+      const email = document.getElementById("feedbackEmail").value;
+      const comments = document.getElementById("comments").value;
+      formMessage.textContent = "✅ Thank you for your feedback, " + email + 
+        "! Your comment: \"" + comments + "\" has been submitted.";
+    });
+  </script>
+
+</body>
+</html>
