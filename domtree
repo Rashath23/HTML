@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript DOM Manipulation</title>
+    <title>DOM Manipulation</title>
     <style>
         /* Basic styling for the elements */
         body {
@@ -29,7 +29,7 @@
 </head>
 <body>
 
-    <h1>Original Heading Text</h1>
+    <h1> Heading Text</h1>
     <h2 id="main-heading">This heading's text will be changed.</h2>
 
     <p id="my-paragraph">This is the original paragraph content that will be updated.</p>
@@ -54,7 +54,7 @@
             const paragraphElement = document.getElementById('my-paragraph');
             paragraphElement.innerHTML = 'The paragraph content has been <strong>updated</strong>!';
 
-            // 4. Change color and font size of text (using the same paragraph)
+            // 4. Change color and font size of text 
             paragraphElement.style.color = 'darkgreen';
             paragraphElement.style.fontSize = '18px';
 
