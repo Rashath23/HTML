@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ES6 Examples (Updated Version)</title>
+</head>
+<body>
+  <h2>Check Console for New ES6 Examples Output</h2>
+
+  <script>
+    // =========================
+    // ES6_1
+    // =========================
+
+    // 1. Rewrite code with let and const
+    const studentName = "Priya";
+    let score = 89;
+
+    // 2. Use template literals with variables
+    console.log(`Student ${studentName} has scored ${score} marks in the exam.`);
+
+    // 3. Function with default parameters
+    function displayMessage(user = "Anonymous", mood = "Happy") {
+      console.log(`Hello ${user}, hope you're feeling ${mood} today!`);
+    }
+    displayMessage();
+    displayMessage("Arjun", "Excited");
+
+    // =========================
+    // ES6_2
+    // =========================
+
+    // 1. Destructuring arrays and objects
+    const animals = ["Dog", "Cat", "Rabbit", "Parrot"];
+    const [pet1, pet2, , pet4] = animals;
+    console.log(`My pets are: ${pet1} and ${pet2}, but I also like ${pet4}.`);
+
+    const employee = { empName: "Kavya", department: "HR", location: "Bangalore" };
+    const { empName, department } = employee;
+    console.log(`Employee ${empName} works in the ${department} department.`);
+
+    // 2. Spread operator to merge arrays
+    const cities1 = ["Chennai", "Delhi"];
+    const cities2 = ["Mumbai", "Kolkata"];
+    const allCities = [...cities1, ...cities2];
+    console.log("All Cities:", allCities);
+
+    // 3. Rest operator in function
+    function calculateAverage(...nums) {
+      const total = nums.reduce((sum, val) => sum + val, 0);
+      return total / nums.length;
+    }
+    console.log("Average:", calculateAverage(10, 20, 30, 40, 50));
+
+    // =========================
+    // ES6_3
+    // =========================
+
+    // 1. Arrow functions
+    const greetUser = (name) => `Welcome, ${name}!`;
+    console.log(greetUser("Meena"));
+
+    const isEven = (num) => num % 2 === 0;
+    console.log(`Is 8 even?`, isEven(8));
+
+    // 2. Class with constructor and method
+    class Car {
+      constructor(brand, year) {
+        this.brand = brand;
+        this.year = year;
+      }
+
+      details() {
+        console.log(`🚗 This car is a ${this.brand} manufactured in ${this.year}.`);
+      }
+    }
+
+    const car1 = new Car("Hyundai", 2022);
+    const car2 = new Car("Tata", 2024);
+
+    car1.details();
+    car2.details();
+
+    // Example of arrow function with array method
+    const prices = [100, 200, 300];
+    const withGST = prices.map(price => price + price * 0.18);
+    console.log("Prices with GST:", withGST);
+  </script>
+</body>
+</html>
