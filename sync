@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sync & Async | Callback | Promise Example</title>
+</head>
+<body>
+  <h2>JavaScript Example: Sync vs Async, Callback, and Promise</h2>
+
+  <script>
+    // -----------------------------
+    // 1. Synchronous vs Asynchronous
+    // -----------------------------
+    console.log("Start of Script");
+
+    // Synchronous operation
+    console.log("Step 1: This runs immediately");
+
+    // Asynchronous using setTimeout
+    setTimeout(() => {
+      console.log("Step 2: Printed after 2 seconds (Asynchronous)");
+    }, 2000);
+
+    console.log("Step 3: Runs while waiting for timeout");
+
+    // -----------------------------
+    // 2. setInterval Example
+    // -----------------------------
+    let count = 0;
+    const timer = setInterval(() => {
+      count++;
+      console.log(Counter value: ${count});
+      if (count >= 3) {
+        clearInterval(timer);
+        console.log("Stopped counter after 3 seconds");
+      }
+    }, 1000);
+
+    // -----------------------------
+    // 3. Callback Example
+    // -----------------------------
+    function fetchData(callback) {
+      console.log("Fetching data...");
+      setTimeout(() => {
+        const data = { name: "Eva Fertility Centre", type: "Clinic" };
+        callback(data); // Call the callback after data is 'fetched'
+      }, 1500);
+    }
+
+    fetchData((result) => {
+      console.log("Data received via callback:", result);
+    });
+
+    // -----------------------------
+    // 4. Promise Example
+    // -----------------------------
+    function loginUser(isValid) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          if (isValid) {
+            resolve("Login Successful ");
+          } else {
+            reject("Login Failed ");
+          }
+        }, 1000);
+      });
+    }
+
+    // Handle promise
+    loginUser(true)
+      .then((msg) => console.log(msg))
+      .catch((err) => console.log(err));
+
+    loginUser(false)
+      .then((msg) => console.log(msg))
+      .catch((err) => console.log(err));
+
+    console.log("End of Script");
+  </script>
+</body>
+</html>
