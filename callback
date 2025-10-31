@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sync vs Async | Callbacks | Promises</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      padding: 20px;
+    }
+    h2 {
+      color: #333;
+    }
+    #output {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      line-height: 1.6;
+    }
+    .success { color: green; }
+    .error { color: red; }
+  </style>
+</head>
+<body>
+  <h2>JavaScript: Sync vs Async, Callbacks & Promises</h2>
+  <div id="output"></div>
+
+  <script>
+    // Utility function to print messages on the screen
+    function showMessage(message, className = "") {
+      const output = document.getElementById("output");
+      const p = document.createElement("p");
+      if (className) p.classList.add(className);
+      p.textContent = message;
+      output.appendChild(p);
+    }
+
+    // ------------------------------
+    // 1. Synchronous vs Asynchronous
+    // ------------------------------
+    showMessage("Synchronous Start");
+
+    // Asynchronous operation: executes after 2 seconds
+    setTimeout(() => {
+      showMessage("This message appears after 2 seconds (Async)");
+    }, 2000);
+
+    showMessage("Synchronous End");
+
+    // ------------------------------
+    // 2. setInterval Example
+    // ------------------------------
+    let counter = 0;
+    const intervalId = setInterval(() => {
+      counter++;
+      showMessage(Counter: ${counter});
+      if (counter === 5) {
+        clearInterval(intervalId);
+        showMessage("Counter stopped!");
+      }
+    }, 1000);
+
+    // ------------------------------
+    // 3. Callback Function Example
+    // ------------------------------
+    function greetUser(name, callback) {
+      showMessage(Hello, ${name}!);
+      callback();
+    }
+
+    function goodbye() {
+      showMessage("Goodbye from callback function!");
+    }
+
+    greetUser("leo", goodbye);
+
+    // ------------------------------
+    // 4. Promises Example
+    // ------------------------------
+    function checkNumber(num) {
+      return new Promise((resolve, reject) => {
+        if (num > 10) {
+          resolve("✅ Number is greater than 10!");
+        } else {
+          reject("❌ Number is less than or equal to 10!");
+        }
+      });
+    }
+
+    // Handling Promise with .then() and .catch()
+    checkNumber(15)
+      .then((message) => {
+        showMessage(Promise Resolved: ${message}, "success");
+      })
+      .catch((error) => {
+        showMessage(Promise Rejected: ${error}, "error");
+      });
+
+    checkNumber(5)
+      .then((message) => {
+        showMessage(Promise Resolved: ${message}, "success");
+      })
+      .catch((error) => {
+        showMessage(Promise Rejected: ${error}, "error");
+      });
+  </script>
+</body>
+</html>
