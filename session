@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local & Session Storage Demo</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #74ABE2, #5563DE, #9D6EF0);
+      background-size: 300% 300%;
+      animation: gradientShift 8s ease infinite;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: #fff;
+      margin: 0;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h2 {
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+
+    .container {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .box {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      padding: 25px 30px;
+      width: 320px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease;
+    }
+
+    .box:hover {
+      transform: translateY(-8px);
+    }
+
+    h3 {
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    input {
+      width: 80%;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      outline: none;
+      text-align: center;
+    }
+
+    button {
+      margin: 6px;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 25px;
+      background: linear-gradient(135deg, #00C6FF, #0072FF);
+      color: white;
+      cursor: pointer;
+      font-weight: 500;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    button:hover {
+      transform: scale(1.08);
+      background: linear-gradient(135deg, #ff8c00, #ff2d55);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+    }
+
+    p {
+      color: #fff;
+      font-weight: 500;
+      margin-top: 12px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 8px;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🌟 Local & Session Storage Demo 🌟</h2>
+
+  <div class="container">
+    <div class="box">
+      <h3>💾 Local Storage</h3>
+      <input type="text" id="localInput" placeholder="Enter your name">
+      <div>
+        <button onclick="saveLocal()">Save</button>
+        <button onclick="getLocal()">Retrieve</button>
+        <button onclick="clearLocal()">Clear</button>
+      </div>
+      <p id="localResult"></p>
+    </div>
+
+    <div class="box">
+      <h3>🕓 Session Storage</h3>
+      <input type="text" id="sessionInput" placeholder="Enter your course">
+      <div>
+        <button onclick="saveSession()">Save</button>
+        <button onclick="getSession()">Retrieve</button>
+        <button onclick="clearSession()">Clear</button>
+      </div>
+      <p id="sessionResult"></p>
+    </div>
+  </div>
+
+  <script>
+    // Local Storage functions
+    function saveLocal() {
+      const name = document.getElementById("localInput").value;
+      localStorage.setItem("username", name);
+      document.getElementById("localResult").innerText = "✅ Saved in localStorage!";
+    }
+
+    function getLocal() {
+      const value = localStorage.getItem("username");
+      document.getElementById("localResult").innerText = value 
+        ? "📦 localStorage Value: " + value 
+        : "⚠️ No value found in localStorage.";
+    }
+
+    function clearLocal() {
+      localStorage.removeItem("username");
+      document.getElementById("localResult").innerText = "🧹 localStorage cleared.";
+    }
+
+    // Session Storage functions
+    function saveSession() {
+      const course = document.getElementById("sessionInput").value;
+      sessionStorage.setItem("course", course);
+      document.getElementById("sessionResult").innerText = "✅ Saved in sessionStorage!";
+    }
+
+    function getSession() {
+      const value = sessionStorage.getItem("course");
+      document.getElementById("sessionResult").innerText = value 
+        ? "📦 sessionStorage Value: " + value 
+        : "⚠️ No value found in sessionStorage.";
+    }
+
+    function clearSession() {
+      sessionStorage.removeItem("course");
+      document.getElementById("sessionResult").innerText = "🧹 sessionStorage cleared.";
+    }
+  </script>
+
+</body>
+</html>
